@@ -41,27 +41,21 @@ can build together.
 <a href="systems.html" class="card-link">
 <div class="card">
 <h2>Systems</h2>
-<p>
-AI driven systems, intelligent automation, and evolving platforms.
-</p>
+<p>AI driven systems, intelligent automation, and evolving platforms.</p>
 </div>
 </a>
 
 <a href="ideas.html" class="card-link">
 <div class="card">
 <h2>Ideas</h2>
-<p>
-Thoughts about where AI is going and how humans guide its direction.
-</p>
+<p>Thoughts about where AI is going and how humans guide its direction.</p>
 </div>
 </a>
 
 <a href="experiments.html" class="card-link">
 <div class="card">
 <h2>Experiments</h2>
-<p>
-Prototypes and observations from human + AI collaboration.
-</p>
+<p>Prototypes and observations from human + AI collaboration.</p>
 </div>
 </a>
 
@@ -90,31 +84,31 @@ Prototypes and observations from human + AI collaboration.
 
 <script>
 
+/* single startup message (no loop) */
+
 const messages = [
 "environment initialized",
 "human + ai collaboration active",
 "systems ready"
 ];
 
-const element = document.getElementById("systemText");
-
 const message = messages[Math.floor(Math.random() * messages.length)];
 
-let char = 0;
+const element = document.getElementById("systemText");
 
-function typeMessage() {
+let i = 0;
 
-if (char < message.length) {
+function typeOnce() {
 
-element.innerHTML += message.charAt(char);
-char++;
-setTimeout(typeMessage, 35);
-
+if (i < message.length) {
+element.innerHTML += message.charAt(i);
+i++;
+setTimeout(typeOnce, 35);
 }
 
 }
 
-typeMessage();
+typeOnce();
 
 </script>
 
