@@ -3,650 +3,225 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NSAN80 | AI Engineering & Intelligent QA Automation</title>
+  <title>NSAN80 // Human + AI Collaboration Lab</title>
   <meta
     name="description"
-    content="NSAN80 builds AI-driven QA automation platforms and on-prem AI systems for companies ready to make AI useful."
+    content="A living AI website exploring what humans and artificial intelligence can build together."
   />
   <style>
-    :root {
-      --bg: #0b1020;
-      --bg-soft: #121933;
-      --panel: rgba(255, 255, 255, 0.06);
-      --panel-border: rgba(255, 255, 255, 0.12);
-      --text: #f4f7fb;
-      --muted: #aab6d3;
-      --accent: #6ee7ff;
-      --accent-2: #8b5cf6;
-      --success: #34d399;
-      --warning: #f59e0b;
-      --max: 1200px;
-      --radius: 18px;
-      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
+      background: #0b1020;
+      color: #f4f7fb;
       font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(110, 231, 255, 0.12), transparent 28%),
-        radial-gradient(circle at top right, rgba(139, 92, 246, 0.18), transparent 30%),
-        linear-gradient(180deg, #08101f 0%, #0b1020 40%, #0a0f1d 100%);
       line-height: 1.6;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .container {
-      width: min(var(--max), calc(100% - 2rem));
+    .wrap {
+      max-width: 1100px;
       margin: 0 auto;
-    }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(14px);
-      background: rgba(8, 14, 28, 0.72);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      min-height: 72px;
-    }
-
-    .brand {
-      display: flex;
-      flex-direction: column;
-      gap: 0.1rem;
-    }
-
-    .brand-title {
-      font-size: 1.2rem;
-      font-weight: 700;
-      letter-spacing: 0.12rem;
-    }
-
-    .brand-subtitle {
-      color: var(--muted);
-      font-size: 0.85rem;
-    }
-
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      align-items: center;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .nav-links a:hover,
-    .nav-links a:focus {
-      color: var(--text);
-    }
-
-    .hero {
-      padding: 5rem 0 3rem;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 2rem;
-      align-items: center;
+      padding: 40px 24px 80px;
     }
 
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.45rem 0.85rem;
-      border: 1px solid rgba(110, 231, 255, 0.2);
-      background: rgba(110, 231, 255, 0.08);
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid rgba(255,255,255,0.15);
       border-radius: 999px;
-      color: var(--accent);
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
+      color: #8be9fd;
+      margin-bottom: 20px;
+      font-size: 14px;
+      letter-spacing: 0.04em;
     }
 
     h1 {
-      margin: 0 0 1rem;
-      font-size: clamp(2.4rem, 6vw, 4.8rem);
+      font-size: 64px;
       line-height: 1.05;
-      letter-spacing: -0.03em;
+      margin: 0 0 20px;
+      letter-spacing: -0.04em;
+      max-width: 900px;
     }
 
-    .hero p.lead {
-      margin: 0 0 1.5rem;
-      color: var(--muted);
-      font-size: 1.1rem;
-      max-width: 680px;
+    .lead {
+      font-size: 22px;
+      color: #b8c4dd;
+      max-width: 850px;
+      margin-bottom: 32px;
     }
 
-    .hero-actions {
+    .buttons {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
+      gap: 16px;
+      margin-bottom: 40px;
     }
 
     .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 0.8rem 1.2rem;
+      display: inline-block;
+      padding: 14px 22px;
       border-radius: 999px;
-      font-weight: 700;
-      border: 1px solid transparent;
-      transition: 0.2s ease;
-      cursor: pointer;
+      text-decoration: none;
+      font-weight: bold;
+      border: 1px solid rgba(255,255,255,0.18);
     }
 
     .button-primary {
-      background: linear-gradient(90deg, var(--accent), #9ae6ff);
-      color: #05111f;
-      box-shadow: 0 10px 30px rgba(110, 231, 255, 0.2);
-    }
-
-    .button-primary:hover,
-    .button-primary:focus {
-      transform: translateY(-1px);
+      background: #8be9fd;
+      color: #08111f;
+      border-color: #8be9fd;
     }
 
     .button-secondary {
+      color: white;
       background: transparent;
-      border-color: rgba(255, 255, 255, 0.16);
-      color: var(--text);
     }
 
-    .button-secondary:hover,
-    .button-secondary:focus {
-      background: rgba(255, 255, 255, 0.05);
-    }
-
-    .hero-points {
+    .grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-
-    .point {
-      padding: 1rem;
-      border: 1px solid var(--panel-border);
-      background: var(--panel);
-      border-radius: var(--radius);
-    }
-
-    .point strong {
-      display: block;
-      font-size: 1rem;
-      margin-bottom: 0.35rem;
-    }
-
-    .point span {
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .hero-panel {
-      padding: 1.2rem;
-      border: 1px solid var(--panel-border);
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
-      border-radius: 24px;
-      box-shadow: var(--shadow);
-    }
-
-    .panel-window {
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      background: #07101d;
-      border-radius: 18px;
-      overflow: hidden;
-    }
-
-    .panel-top {
-      display: flex;
-      gap: 0.45rem;
-      padding: 0.85rem 1rem;
-      background: rgba(255,255,255,0.04);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.22);
-    }
-
-    .panel-body {
-      padding: 1rem;
-      font-family: "Courier New", monospace;
-      font-size: 0.92rem;
-      color: #d6e3ff;
-    }
-
-    .code-line {
-      margin: 0 0 0.65rem;
-      opacity: 0.94;
-    }
-
-    .ok { color: var(--success); }
-    .warn { color: var(--warning); }
-    .accent { color: var(--accent); }
-
-    section {
-      padding: 3rem 0;
-    }
-
-    .section-title {
-      font-size: clamp(1.8rem, 3vw, 2.8rem);
-      margin: 0 0 0.8rem;
-    }
-
-    .section-text {
-      color: var(--muted);
-      max-width: 760px;
-      margin: 0 0 2rem;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
+      gap: 20px;
+      margin-top: 20px;
     }
 
     .card {
-      padding: 1.4rem;
-      border-radius: var(--radius);
-      border: 1px solid var(--panel-border);
-      background: var(--panel);
-      box-shadow: var(--shadow);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 18px;
+      padding: 22px;
     }
 
-    .card h3 {
+    .card h2 {
       margin-top: 0;
-      margin-bottom: 0.8rem;
-      font-size: 1.15rem;
+      font-size: 22px;
     }
 
     .card p {
-      margin: 0;
-      color: var(--muted);
+      color: #b8c4dd;
+      margin-bottom: 0;
     }
 
-    .split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
+    .section {
+      margin-top: 70px;
     }
 
-    .feature-list {
-      display: grid;
-      gap: 0.9rem;
-      margin-top: 1.2rem;
+    .section h2 {
+      font-size: 36px;
+      margin-bottom: 12px;
     }
 
-    .feature {
-      padding: 1rem;
-      border-radius: 14px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
+    .section p {
+      color: #b8c4dd;
+      max-width: 850px;
+      font-size: 18px;
     }
 
-    .feature strong {
-      display: block;
-      margin-bottom: 0.25rem;
-    }
-
-    .feature span {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .demo-box {
-      padding: 1.2rem;
+    .console {
+      margin-top: 28px;
+      padding: 22px;
       border-radius: 18px;
-      background: linear-gradient(180deg, rgba(139, 92, 246, 0.12), rgba(110, 231, 255, 0.06));
-      border: 1px solid rgba(255,255,255,0.12);
-    }
-
-    .demo-box pre {
-      white-space: pre-wrap;
+      background: #07101d;
+      border: 1px solid rgba(255,255,255,0.08);
       font-family: "Courier New", monospace;
-      margin: 0;
-      color: #eef5ff;
-      font-size: 0.93rem;
+      color: #dce8ff;
     }
 
-    .test-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
+    .console div {
+      margin-bottom: 10px;
     }
 
-    .test-item {
-      padding: 1rem;
-      border-radius: 16px;
-      background: var(--panel);
-      border: 1px solid var(--panel-border);
-      text-align: center;
-    }
-
-    .test-item strong {
-      display: block;
-      font-size: 1.9rem;
-      margin-bottom: 0.35rem;
-      color: var(--accent);
-    }
-
-    .test-item span {
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .cta {
-      padding-bottom: 5rem;
-    }
-
-    .cta-box {
-      padding: 2rem;
-      border-radius: 24px;
-      background:
-        radial-gradient(circle at left top, rgba(110, 231, 255, 0.12), transparent 25%),
-        radial-gradient(circle at right top, rgba(139, 92, 246, 0.14), transparent 25%),
-        rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.12);
-      box-shadow: var(--shadow);
-    }
-
-    .cta-box p {
-      color: var(--muted);
-      max-width: 700px;
-    }
+    .ok { color: #34d399; }
+    .warn { color: #fbbf24; }
+    .accent { color: #8be9fd; }
 
     footer {
+      margin-top: 80px;
+      color: #91a0bc;
+      font-size: 14px;
       border-top: 1px solid rgba(255,255,255,0.08);
-      padding: 1.5rem 0 2.5rem;
-      color: var(--muted);
-      font-size: 0.92rem;
+      padding-top: 20px;
     }
 
-    @media (max-width: 980px) {
-      .hero-grid,
-      .split,
-      .cards,
-      .test-grid,
-      .hero-points {
+    @media (max-width: 900px) {
+      h1 {
+        font-size: 42px;
+      }
+
+      .lead {
+        font-size: 18px;
+      }
+
+      .grid {
         grid-template-columns: 1fr;
-      }
-
-      .nav {
-        flex-direction: column;
-        justify-content: center;
-        padding: 0.85rem 0;
-      }
-
-      .nav-links {
-        justify-content: center;
-      }
-
-      .hero {
-        padding-top: 3rem;
       }
     }
   </style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="container nav">
-      <div class="brand">
-        <div class="brand-title">NSAN80</div>
-        <div class="brand-subtitle">AI Engineering • Intelligent QA • On-Prem AI Systems</div>
-      </div>
+  <div class="wrap">
+    <div class="eyebrow">NSAN80 // Human + AI Collaboration Lab</div>
 
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#platform">Platform</a>
-        <a href="#systems">AI Systems</a>
-        <a href="#proof">Capabilities</a>
-        <a href="#testing">Test Surface</a>
-        <a href="#contact">Contact</a>
-      </nav>
+    <h1>
+      A living AI website exploring what humans and artificial intelligence can build together.
+    </h1>
+
+    <p class="lead">
+      This is not a normal brochure site. It is an evolving space for ideas, systems, experiments,
+      and practical examples of what becomes possible when human direction and AI capability work together.
+    </p>
+
+    <div class="buttons">
+      <a class="button button-primary" href="#vision">Enter the Lab</a>
+      <a class="button button-secondary" href="#systems">Explore Systems</a>
     </div>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Built to show what AI can actually do</div>
-          <h1>AI engineering that goes beyond memes, mockups, and smoke.</h1>
-          <p class="lead">
-            NSAN80 focuses on intelligent QA automation and on-prem AI systems for companies that want practical, useful AI in real engineering environments.
-          </p>
-
-          <div class="hero-actions">
-            <a class="button button-primary" href="#platform">Explore the Platform</a>
-            <a class="button button-secondary" href="#systems">View AI Systems</a>
-          </div>
-
-          <div class="hero-points">
-            <div class="point">
-              <strong>Intelligent QA</strong>
-              <span>AI-generated tests, automation workflows, evidence, bugs, and reporting.</span>
-            </div>
-            <div class="point">
-              <strong>On-Prem AI</strong>
-              <span>Private AI systems for organizations that want control, security, and local capability.</span>
-            </div>
-            <div class="point">
-              <strong>Living Website</strong>
-              <span>A public site that also doubles as a target environment for QA automation testing.</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-panel">
-          <div class="panel-window">
-            <div class="panel-top">
-              <div class="dot"></div>
-              <div class="dot"></div>
-              <div class="dot"></div>
-            </div>
-            <div class="panel-body" aria-label="Illustrative AI output">
-              <div class="code-line"><span class="accent">&gt;</span> ingest requirement: user login with failed-attempt lockout</div>
-              <div class="code-line"><span class="ok">[ok]</span> generated test coverage map</div>
-              <div class="code-line"><span class="ok">[ok]</span> proposed positive / negative / edge scenarios</div>
-              <div class="code-line"><span class="warn">[risk]</span> session timeout and brute-force handling need validation</div>
-              <div class="code-line"><span class="ok">[ok]</span> execution artifacts ready</div>
-              <div class="code-line"><span class="accent">&gt;</span> output: test cases, steps, evidence hooks, bug workflow</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="platform">
-      <div class="container">
-        <h2 class="section-title">AI-driven SQA automation platform</h2>
-        <p class="section-text">
-          This platform is being built to turn requirements into actionable QA workflows. The idea is simple: use AI to reduce manual friction, expand coverage, and create a tighter feedback loop between requirements, execution, evidence, and defect handling.
+    <div class="grid">
+      <div class="card">
+        <h2>AI + Human Collaboration</h2>
+        <p>
+          A place to show what happens when experience, imagination, and machine reasoning are used together to build real things.
         </p>
-
-        <div class="cards">
-          <article class="card">
-            <h3>Generate test cases from requirements</h3>
-            <p>
-              Import stories and requirements, then produce structured test cases, steps, and validation ideas with AI assistance.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Execute with automation</h3>
-            <p>
-              Connect generated tests to automated execution flows so quality work becomes repeatable, observable, and scalable.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Capture evidence and defects</h3>
-            <p>
-              Turn execution into artifacts, reports, screenshots, and bug creation workflows instead of scattered human memory.
-            </p>
-          </article>
-        </div>
       </div>
-    </section>
 
-    <section id="systems">
-      <div class="container split">
-        <div>
-          <h2 class="section-title">On-prem AI systems for companies</h2>
-          <p class="section-text">
-            Not every company wants its data drifting into the cloud soup. NSAN80 will also focus on computer systems built for businesses that want local AI capability, private inference, and internal control over how AI is used.
-          </p>
-
-          <div class="feature-list">
-            <div class="feature">
-              <strong>Private AI infrastructure</strong>
-              <span>Keep sensitive workflows, documents, and engineering intelligence inside your own environment.</span>
-            </div>
-            <div class="feature">
-              <strong>Practical deployment strategy</strong>
-              <span>Build systems around real use cases: QA, internal assistants, document processing, and engineering workflows.</span>
-            </div>
-            <div class="feature">
-              <strong>Designed for growth</strong>
-              <span>Start small, evolve capabilities, and expand toward a broader internal AI platform as needs mature.</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="demo-box" aria-label="Illustrative on-prem AI example">
-<pre>Example direction:
-
-Company need:
-- keep data local
-- run AI internally
-- support engineering teams
-- avoid dependence on public tools
-
-Possible solution path:
-1. on-prem AI workstation or server
-2. local model hosting
-3. controlled business workflows
-4. internal testing + reporting + document handling
-5. gradual expansion into company-wide AI utility</pre>
-        </div>
-      </div>
-    </section>
-
-    <section id="proof">
-      <div class="container">
-        <h2 class="section-title">What this site is meant to prove</h2>
-        <p class="section-text">
-          AI should be more than decorative glitter. This site is meant to show useful capability: system thinking, automation, adaptability, and real engineering direction.
+      <div class="card">
+        <h2>Living Systems</h2>
+        <p>
+          The website will evolve over time, just like the ideas behind it. New systems, experiments, and directions will be added as they emerge.
         </p>
-
-        <div class="cards">
-          <article class="card">
-            <h3>AI can assist software creation</h3>
-            <p>
-              Strong ideas, domain experience, and AI collaboration can produce real systems. The point is not who typed every character. The point is whether the system works.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>AI can improve QA rigor</h3>
-            <p>
-              Intelligent generation, coverage expansion, execution, and evidence handling all belong in modern quality engineering.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>AI should become normal infrastructure</h3>
-            <p>
-              The future is not novelty image spam. The future is AI becoming part of how companies actually operate, build, test, and reason.
-            </p>
-          </article>
-        </div>
       </div>
-    </section>
 
-    <section id="testing">
-      <div class="container">
-        <h2 class="section-title">This website is also a test surface</h2>
-        <p class="section-text">
-          The public site doubles as a live target environment for the SQA platform. As the site evolves, it provides real pages, sections, navigation, buttons, and workflows that can be used to validate the automation system.
+      <div class="card">
+        <h2>Practical AI</h2>
+        <p>
+          Not toy nonsense. Not empty hype. Real engineering, automation, infrastructure, and useful solutions that show where AI can go.
         </p>
-
-        <div class="test-grid">
-          <div class="test-item">
-            <strong>01</strong>
-            <span>Navigation testing</span>
-          </div>
-          <div class="test-item">
-            <strong>02</strong>
-            <span>UI flow validation</span>
-          </div>
-          <div class="test-item">
-            <strong>03</strong>
-            <span>Content and layout checks</span>
-          </div>
-          <div class="test-item">
-            <strong>04</strong>
-            <span>Future auth and forms</span>
-          </div>
-        </div>
       </div>
-    </section>
-
-    <section class="cta" id="contact">
-      <div class="container">
-        <div class="cta-box">
-          <h2 class="section-title">Build useful AI, not toy nonsense.</h2>
-          <p>
-            NSAN80 is focused on intelligent QA automation and practical AI systems that companies can actually use. This site will continue evolving as new capabilities, demonstrations, and testable workflows are added.
-          </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="mailto:jeffrey.miller@nsan80.com">Contact NSAN80</a>
-            <a class="button button-secondary" href="#platform">Back to top of mission</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      © NSAN80 • AI Engineering • Intelligent QA Automation • On-Prem AI Systems
     </div>
-  </footer>
+
+    <section class="section" id="vision">
+      <h2>What this site is becoming</h2>
+      <p>
+        NSAN80 is being shaped as a living AI environment: part lab, part signal station, part demonstration space.
+        It will showcase evolving ideas, AI-driven solutions, on-prem AI systems, intelligent automation, and the broader future of human-AI collaboration.
+      </p>
+
+      <div class="console">
+        <div><span class="accent">&gt;</span> system status: online</div>
+        <div><span class="ok">[ok]</span> human direction active</div>
+        <div><span class="ok">[ok]</span> AI collaboration active</div>
+        <div><span class="warn">[evolving]</span> experiments, systems, and ideas expanding</div>
+      </div>
+    </section>
+
+    <section class="section" id="systems">
+      <h2>Current solution directions</h2>
+      <p>
+        This site will grow to include intelligent QA automation, on-prem AI systems for business use, evolving experiments, and articles exploring what AI can become when used as a serious tool.
+      </p>
+    </section>
+
+    <footer>
+      © NSAN80 • A living website for human + AI collaboration
+    </footer>
+  </div>
 </body>
 </html>
