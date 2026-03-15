@@ -5,112 +5,51 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NSAN80 // Human + AI Collaboration</title>
-
-<meta name="description"
-content="A living AI website exploring what humans and artificial intelligence can build together.">
+<title>NSAN80</title>
 
 <link rel="stylesheet" href="css/style.css">
+
+<style>
+
+.center-screen {
+display:flex;
+align-items:center;
+justify-content:center;
+height:100vh;
+text-align:center;
+flex-direction:column;
+}
+
+.message {
+font-size:28px;
+letter-spacing:1px;
+color:#d7dde7;
+margin-bottom:20px;
+}
+
+.sub {
+font-family:monospace;
+color:#7aa2d6;
+opacity:.8;
+}
+
+</style>
+
 </head>
 
 <body>
 
-<nav class="nav">
-<a href="index.html">Home</a>
-<a href="systems.html">Systems</a>
-<a href="ideas.html">Ideas</a>
-<a href="experiments.html">Experiments</a>
-<a href="contact.html">Contact</a>
-</nav>
+<div class="center-screen">
 
-<div class="container">
-
-<h1>NSAN80</h1>
-
-<p class="lead">
-A living environment exploring what humans and artificial intelligence
-can build together.
-</p>
-
-<div class="system-message">
-<span id="systemText"></span>
+<div class="message">
+Under Collaborative Inspiration
 </div>
 
-<div class="card-grid">
-
-<a href="systems.html" class="card-link">
-<div class="card">
-<h2>Systems</h2>
-<p>AI driven systems, intelligent automation, and evolving platforms.</p>
-</div>
-</a>
-
-<a href="ideas.html" class="card-link">
-<div class="card">
-<h2>Ideas</h2>
-<p>Thoughts about where AI is going and how humans guide its direction.</p>
-</div>
-</a>
-
-<a href="experiments.html" class="card-link">
-<div class="card">
-<h2>Experiments</h2>
-<p>Prototypes and observations from human + AI collaboration.</p>
-</div>
-</a>
-
-</div>
-
-<h2 class="section-title">Status</h2>
-
-<div class="card pulse-card">
-
-<div class="status-row">
-<span class="pulse-dot"></span>
-<span class="status-text">environment online</span>
-</div>
-
-<p><strong>deployment:</strong> active</p>
-<p><strong>experiments:</strong> expanding</p>
-<p><strong>ideas:</strong> evolving</p>
-
+<div class="sub">
+Human + AI collaboration environment initializing
 </div>
 
 </div>
-
-<footer>
-<p>© NSAN80 — Human + AI Collaboration</p>
-</footer>
-
-<script>
-
-/* single startup message (no loop) */
-
-const messages = [
-"environment initialized",
-"human + ai collaboration active",
-"systems ready"
-];
-
-const message = messages[Math.floor(Math.random() * messages.length)];
-
-const element = document.getElementById("systemText");
-
-let i = 0;
-
-function typeOnce() {
-
-if (i < message.length) {
-element.innerHTML += message.charAt(i);
-i++;
-setTimeout(typeOnce, 35);
-}
-
-}
-
-typeOnce();
-
-</script>
 
 </body>
 </html>
