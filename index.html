@@ -11,26 +11,63 @@
 
 <style>
 
-.center-screen {
+body {
 display:flex;
 align-items:center;
 justify-content:center;
 height:100vh;
-text-align:center;
-flex-direction:column;
+background:#0b1220;
+color:#d7dde7;
+font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
 }
 
-.message {
+.boot {
+text-align:center;
+max-width:600px;
+}
+
+.title {
 font-size:28px;
 letter-spacing:1px;
-color:#d7dde7;
-margin-bottom:20px;
+margin-bottom:18px;
 }
 
-.sub {
+.subtitle {
 font-family:monospace;
 color:#7aa2d6;
-opacity:.8;
+opacity:.85;
+margin-bottom:40px;
+}
+
+.loader {
+width:120px;
+height:2px;
+background:#1c2a3f;
+margin:auto;
+position:relative;
+overflow:hidden;
+}
+
+.loader::after {
+content:"";
+position:absolute;
+left:-40%;
+width:40%;
+height:100%;
+background:#3da9fc;
+animation:bootline 2.5s linear infinite;
+}
+
+@keyframes bootline {
+0% { left:-40%; }
+100% { left:100%; }
+}
+
+.status {
+margin-top:18px;
+font-family:monospace;
+color:#9fb3c8;
+font-size:13px;
 }
 
 </style>
@@ -39,14 +76,20 @@ opacity:.8;
 
 <body>
 
-<div class="center-screen">
+<div class="boot">
 
-<div class="message">
+<div class="title">
 Under Collaborative Inspiration
 </div>
 
-<div class="sub">
-Human + AI collaboration environment initializing
+<div class="subtitle">
+Human + AI environment initializing
+</div>
+
+<div class="loader"></div>
+
+<div class="status">
+systems preparing • collaboration loading
 </div>
 
 </div>
