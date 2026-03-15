@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NSAN80 // Human + AI Collaboration Lab</title>
+  <title>NSAN80 // Human + AI Collaboration</title>
   <meta
     name="description"
     content="A living AI website exploring what humans and artificial intelligence can build together."
@@ -21,6 +21,25 @@
       max-width: 1100px;
       margin: 0 auto;
       padding: 40px 24px 80px;
+    }
+
+    .topnav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 40px;
+    }
+
+    .topnav a {
+      color: #dbe7ff;
+      text-decoration: none;
+      padding: 10px 16px;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 999px;
+    }
+
+    .topnav a:hover {
+      background: rgba(255,255,255,0.08);
     }
 
     .eyebrow {
@@ -142,81 +161,73 @@
     }
 
     @media (max-width: 900px) {
-      h1 {
-        font-size: 42px;
-      }
-
-      .lead {
-        font-size: 18px;
-      }
-
-      .grid {
-        grid-template-columns: 1fr;
-      }
+      h1 { font-size: 42px; }
+      .lead { font-size: 18px; }
+      .grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="eyebrow">NSAN80 // Human + AI Collaboration Lab</div>
+    <nav class="topnav">
+      <a href="index.html">Home</a>
+      <a href="systems.html">Systems</a>
+      <a href="ideas.html">Ideas</a>
+      <a href="experiments.html">Experiments</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="eyebrow">NSAN80 // Human + AI Collaboration</div>
 
     <h1>
-      A living AI website exploring what humans and artificial intelligence can build together.
+      A living website exploring what humans and artificial intelligence can build together.
     </h1>
 
     <p class="lead">
-      This is not a normal brochure site. It is an evolving space for ideas, systems, experiments,
-      and practical examples of what becomes possible when human direction and AI capability work together.
+      This is a starting point for a larger evolving environment focused on practical AI, intelligent systems,
+      human + AI collaboration, and the kinds of solutions that become possible when AI is treated as a serious tool.
     </p>
 
     <div class="buttons">
-      <a class="button button-primary" href="#vision">Enter the Lab</a>
-      <a class="button button-secondary" href="#systems">Explore Systems</a>
+      <a class="button button-primary" href="systems.html">Explore Systems</a>
+      <a class="button button-secondary" href="ideas.html">Explore Ideas</a>
     </div>
 
     <div class="grid">
       <div class="card">
-        <h2>AI + Human Collaboration</h2>
+        <h2>Systems</h2>
         <p>
-          A place to show what happens when experience, imagination, and machine reasoning are used together to build real things.
+          AI-driven solutions, intelligent automation, on-prem AI systems, and practical implementations that go beyond novelty.
         </p>
       </div>
 
       <div class="card">
-        <h2>Living Systems</h2>
+        <h2>Ideas</h2>
         <p>
-          The website will evolve over time, just like the ideas behind it. New systems, experiments, and directions will be added as they emerge.
+          A place for the larger vision: what AI can become, how it changes work, and why human direction still matters.
         </p>
       </div>
 
       <div class="card">
-        <h2>Practical AI</h2>
+        <h2>Experiments</h2>
         <p>
-          Not toy nonsense. Not empty hype. Real engineering, automation, infrastructure, and useful solutions that show where AI can go.
+          An evolving space for field notes, demonstrations, observations, and examples of human + AI collaboration.
         </p>
       </div>
     </div>
 
-    <section class="section" id="vision">
-      <h2>What this site is becoming</h2>
+    <section class="section">
+      <h2>System status</h2>
       <p>
-        NSAN80 is being shaped as a living AI environment: part lab, part signal station, part demonstration space.
-        It will showcase evolving ideas, AI-driven solutions, on-prem AI systems, intelligent automation, and the broader future of human-AI collaboration.
+        The site is intentionally starting simple. The goal is to establish a clean structure first, then evolve it over time into something more alive, interactive, and expressive.
       </p>
 
       <div class="console">
         <div><span class="accent">&gt;</span> system status: online</div>
-        <div><span class="ok">[ok]</span> human direction active</div>
-        <div><span class="ok">[ok]</span> AI collaboration active</div>
-        <div><span class="warn">[evolving]</span> experiments, systems, and ideas expanding</div>
+        <div><span class="ok">[ok]</span> domain active</div>
+        <div><span class="ok">[ok]</span> deployment pipeline active</div>
+        <div><span class="warn">[evolving]</span> systems, ideas, and experiments expanding</div>
       </div>
-    </section>
-
-    <section class="section" id="systems">
-      <h2>Current solution directions</h2>
-      <p>
-        This site will grow to include intelligent QA automation, on-prem AI systems for business use, evolving experiments, and articles exploring what AI can become when used as a serious tool.
-      </p>
     </section>
 
     <footer>
