@@ -106,20 +106,42 @@ Interactive AI elements and experimental interfaces planned.</p>
 
 <script>
 
-const text = "system interface ready • human + ai collaboration active";
+const messages = [
+"system interface ready",
+"human + ai collaboration active",
+"local intelligence experiments expanding",
+"mission: build intelligent systems"
+];
+
 const element = document.getElementById("systemText");
 
-let i = 0;
+let index = 0;
+let char = 0;
 
-function type() {
-  if (i < text.length) {
-    element.innerHTML += text.charAt(i);
-    i++;
-    setTimeout(type, 35);
-  }
+function typeMessage() {
+
+if (char < messages[index].length) {
+
+element.innerHTML += messages[index].charAt(char);
+char++;
+setTimeout(typeMessage, 30);
+
+} else {
+
+setTimeout(() => {
+
+element.innerHTML = "";
+char = 0;
+index = (index + 1) % messages.length;
+typeMessage();
+
+}, 2500);
+
 }
 
-type();
+}
+
+typeMessage();
 
 </script>
 
