@@ -7,8 +7,6 @@
 
 <title>NSAN80</title>
 
-<link rel="stylesheet" href="css/style.css">
-
 <style>
 
 body {
@@ -27,7 +25,7 @@ max-width:600px;
 }
 
 .title {
-font-size:28px;
+font-size:30px;
 letter-spacing:1px;
 margin-bottom:18px;
 }
@@ -35,39 +33,39 @@ margin-bottom:18px;
 .subtitle {
 font-family:monospace;
 color:#7aa2d6;
-opacity:.85;
 margin-bottom:40px;
 }
 
 .loader {
-width:120px;
-height:2px;
+width:200px;
+height:4px;
 background:#1c2a3f;
 margin:auto;
 position:relative;
 overflow:hidden;
+border-radius:2px;
 }
 
 .loader::after {
 content:"";
 position:absolute;
-left:-40%;
-width:40%;
+left:-50%;
+width:50%;
 height:100%;
 background:#3da9fc;
-animation:bootline 2.5s linear infinite;
+animation:bootline 2s linear infinite;
 }
 
 @keyframes bootline {
-0% { left:-40%; }
+0% { left:-50%; }
 100% { left:100%; }
 }
 
 .status {
-margin-top:18px;
+margin-top:20px;
 font-family:monospace;
 color:#9fb3c8;
-font-size:13px;
+font-size:14px;
 }
 
 </style>
@@ -88,11 +86,29 @@ Human + AI environment initializing
 
 <div class="loader"></div>
 
-<div class="status">
-systems preparing • collaboration loading
-</div>
+<div class="status" id="statusLine"></div>
 
 </div>
+
+<script>
+
+const messages = [
+
+"systems preparing • collaboration loading",
+"initializing curiosity engine",
+"verifying caffeine levels",
+"synchronizing human intuition",
+"ai ready • humans improvising",
+"checking if this idea is brilliant or ridiculous",
+"loading unreasonable optimism"
+
+];
+
+const line = messages[Math.floor(Math.random()*messages.length)];
+
+document.getElementById("statusLine").innerText = line;
+
+</script>
 
 </body>
 </html>
