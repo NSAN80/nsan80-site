@@ -28,7 +28,7 @@ content="A living AI website exploring what humans and artificial intelligence c
 <h1>NSAN80</h1>
 
 <p class="lead">
-A living website exploring what humans and artificial intelligence
+A living environment exploring what humans and artificial intelligence
 can build together.
 </p>
 
@@ -67,59 +67,18 @@ Prototypes and observations from human + AI collaboration.
 
 </div>
 
-<h2 class="section-title">System Board</h2>
-
-<div class="card-grid">
-
-<div class="card">
-<h3>AI Research</h3>
-<p>Status: active</p>
-</div>
-
-<div class="card">
-<h3>Automation Platform</h3>
-<p>Status: development</p>
-</div>
-
-<div class="card">
-<h3>Local AI Systems</h3>
-<p>Status: experimentation</p>
-</div>
-
-<div class="card">
-<h3>Human + AI Collaboration</h3>
-<p>Status: evolving</p>
-</div>
-
-</div>
-
-<h2 class="section-title">System Pulse</h2>
+<h2 class="section-title">Status</h2>
 
 <div class="card pulse-card">
 
 <div class="status-row">
 <span class="pulse-dot"></span>
-<span class="status-text">system status: online</span>
+<span class="status-text">environment online</span>
 </div>
 
 <p><strong>deployment:</strong> active</p>
 <p><strong>experiments:</strong> expanding</p>
 <p><strong>ideas:</strong> evolving</p>
-
-</div>
-
-<h2 class="section-title">System Evolution</h2>
-
-<div class="card">
-
-<p><strong>2026-03-15</strong><br>
-Initial site architecture deployed.</p>
-
-<p><strong>2026-03-16</strong><br>
-Core navigation and section structure created.</p>
-
-<p><strong>future</strong><br>
-Interactive AI elements and experimental interfaces planned.</p>
 
 </div>
 
@@ -132,35 +91,24 @@ Interactive AI elements and experimental interfaces planned.</p>
 <script>
 
 const messages = [
-"system interface ready",
+"environment initialized",
 "human + ai collaboration active",
-"local intelligence experiments expanding",
-"mission: build intelligent systems"
+"systems ready"
 ];
 
 const element = document.getElementById("systemText");
 
-let index = 0;
+const message = messages[Math.floor(Math.random() * messages.length)];
+
 let char = 0;
 
 function typeMessage() {
 
-if (char < messages[index].length) {
+if (char < message.length) {
 
-element.innerHTML += messages[index].charAt(char);
+element.innerHTML += message.charAt(char);
 char++;
-setTimeout(typeMessage, 30);
-
-} else {
-
-setTimeout(() => {
-
-element.innerHTML = "";
-char = 0;
-index = (index + 1) % messages.length;
-typeMessage();
-
-}, 2500);
+setTimeout(typeMessage, 35);
 
 }
 
