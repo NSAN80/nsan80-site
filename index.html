@@ -32,6 +32,10 @@ A living website exploring what humans and artificial intelligence
 can build together.
 </p>
 
+<div class="system-message">
+<span id="systemText"></span>
+</div>
+
 <div class="card-grid">
 
 <a href="systems.html" class="card-link">
@@ -99,6 +103,25 @@ Interactive AI elements and experimental interfaces planned.</p>
 <footer>
 <p>© NSAN80 — Human + AI Collaboration</p>
 </footer>
+
+<script>
+
+const text = "system interface ready • human + ai collaboration active";
+const element = document.getElementById("systemText");
+
+let i = 0;
+
+function type() {
+  if (i < text.length) {
+    element.innerHTML += text.charAt(i);
+    i++;
+    setTimeout(type, 35);
+  }
+}
+
+type();
+
+</script>
 
 </body>
 </html>
