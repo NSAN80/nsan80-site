@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login — NSAN80</title>
+  <meta name="description" content="NSAN80 login test page">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <nav class="nav">
+    <a href="index.html" data-testid="nav-home">Home</a>
+    <a href="systems.html" data-testid="nav-systems">Systems</a>
+    <a href="ideas.html" data-testid="nav-ideas">Ideas</a>
+    <a href="experiments.html" data-testid="nav-experiments">Experiments</a>
+    <a href="contact.html" data-testid="nav-contact">Contact</a>
+    <a href="login.html" data-testid="nav-login">Login</a>
+  </nav>
+
+  <div class="container auth-container">
+    <div class="auth-card" data-testid="login-card">
+      <h1>Login</h1>
+      <p class="lead">
+        Functional QA login page with explicit validation and stable selectors.
+      </p>
+
+      <div class="hint-box" data-testid="login-hint">
+        <strong>QA test account</strong><br>
+        Email: qa@nsan80.com<br>
+        Password: Pass1234!
+      </div>
+
+      <form id="loginForm" novalidate data-testid="login-form">
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autocomplete="username"
+            inputmode="email"
+            required
+            minlength="6"
+            maxlength="100"
+            data-testid="login-email"
+          >
+          <div class="field-message" id="emailError" data-testid="login-email-error" aria-live="polite"></div>
+        </div>
+
+        <div class="form-row">
+          <label for="password">Password</label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            autocomplete="current-password"
+            required
+            minlength="8"
+            maxlength="64"
+            data-testid="login-password"
+          >
+          <div class="field-message" id="passwordError" data-testid="login-password-error" aria-live="polite"></div>
+        </div>
+
+        <div class="rules-box" data-testid="login-rules">
+          <strong>Validation policy</strong>
+          <ul>
+            <li>Email is required and must be valid format</li>
+            <li>Password is required</li>
+            <li>Password minimum length: 8</li>
+            <li>Password maximum length: 64</li>
+          </ul>
+        </div>
+
+        <div class="button-row">
+          <button type="submit" class="primary-button" data-testid="login-submit">
+            Sign In
+          </button>
+          <button type="button" class="secondary-button" id="clearButton" data-testid="login-clear">
+            Clear
+          </button>
+        </div>
+
+        <div class="status-box" id="formStatus" data-testid="login-status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/login.js"></script>
+</body>
+
+</html>
