@@ -88,14 +88,3 @@ clearButton.addEventListener("click", function () {
   emailInput.focus();
 });
 
-const toggleHint = document.getElementById("toggleHint");
-const hintBox = document.querySelector('[data-testid="login-hint"]');
-
-toggleHint.addEventListener("click", function () {
-  hintBox.classList.toggle("hidden");
-
-  toggleHint.textContent =
-    hintBox.classList.contains("hidden")
-      ? "Show QA Credentials"
-      : "Hide QA Credentials";
-});
