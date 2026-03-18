@@ -261,3 +261,7 @@ footer {
 [data-testid="nav-login"] {
     display: none !important;
 }
+/* Hide login link globally by URL */
+.nav a[href="login.html"] {
+    display: none !important;
+}
