@@ -87,6 +87,7 @@ clearButton.addEventListener("click", function () {
   resetMessages();
   emailInput.focus();
 });
+
 const toggleHint = document.getElementById("toggleHint");
 const hintBox = document.querySelector('[data-testid="login-hint"]');
 
