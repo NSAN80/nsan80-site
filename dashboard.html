@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — NSAN80</title>
+  <meta name="description" content="NSAN80 dashboard test page">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <nav class="nav">
+    <a href="index.html" data-testid="nav-home">Home</a>
+    <a href="systems.html" data-testid="nav-systems">Systems</a>
+    <a href="ideas.html" data-testid="nav-ideas">Ideas</a>
+    <a href="experiments.html" data-testid="nav-experiments">Experiments</a>
+    <a href="contact.html" data-testid="nav-contact">Contact</a>
+    <a href="login.html" data-testid="nav-login">Login</a>
+  </nav>
+
+  <div class="container auth-container">
+    <div class="auth-card" data-testid="dashboard-card">
+      <h1>Dashboard</h1>
+      <p class="lead" data-testid="dashboard-message">
+        Login succeeded. This page is a QA target for authenticated-flow testing.
+      </p>
+
+      <div class="status-box success" data-testid="dashboard-status">
+        Authenticated session active.
+      </div>
+
+      <div class="button-row">
+        <button id="logoutButton" class="primary-button" data-testid="logout-button">
+          Log Out
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const authenticated = sessionStorage.getItem("nsan80_auth") === "true";
+
+    if (!authenticated) {
+      window.location.href = "login.html";
+    }
+
+    document.getElementById("logoutButton").addEventListener("click", function () {
+      sessionStorage.removeItem("nsan80_auth");
+      window.location.href = "login.html";
+    });
+  </script>
+</body>
+
+</html>
