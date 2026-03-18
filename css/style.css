@@ -254,3 +254,6 @@ footer {
     color: #6e7c91;
     font-size: 14px;
 }
+.hidden {
+    display: none;
+}
