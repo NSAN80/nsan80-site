@@ -26,6 +26,16 @@
       throw new Error("Unauthorized staging access");
     }
   </script>
+  <div style="position:fixed;top:0;left:0;width:100%;
+            background:#ff3b3b;color:#fff;
+            text-align:center;font-weight:bold;
+            padding:8px;z-index:9999;">
+  STAGING ENVIRONMENT — NOT PRODUCTION
+</div>
+
+<script>
+  document.body.style.paddingTop = "40px";
+</script>  
 
   <nav class="nav">
     <a href="index.html" data-testid="nav-home">Home</a>
