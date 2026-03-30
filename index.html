@@ -1,185 +1,138 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NSAN80 - Software Testing Solutions</title>
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
+Skip to content
+NSAN80
+nsan80-site
+Repository navigation
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+Commit c419c83
+author
+NSAN80
+authored
+2 weeks ago
+·
+·
+Verified
+Update index.html
+main
+1 parent 
+31d3627
+ commit 
+c419c83
+File tree
 
-<header class="site-header">
-  <div class="container header-inner">
-    <div>
-      <a href="#home" class="site-brand">NSAN80</a>
-      <div class="site-tagline">Software Testing Solutions</div>
-    </div>
+index.html
+1 file changed
++31
+-15
+lines changed
 
-    <nav class="nav">
-      <a href="#solutions">Solutions</a>
-      <a href="#services">Services</a>
-      <a href="#how">How It Works</a>
-      <a href="dashboard.html">Login</a>
-    </nav>
-  </div>
-</header>
+ 
+‎index.html‎
++31
+-15
+Lines changed: 31 additions & 15 deletions
+Original file line number	Diff line number	Diff line change
+@@ -7,8 +7,6 @@
 
-<section id="home" class="hero">
-  <div class="container hero-grid">
-    <div class="hero-copy">
-      <span class="eyebrow">Deterministic QA Systems</span>
-      <h1>AI-Assisted Software Testing Solutions</h1>
-      <p class="lead">Built from real SQA experience.</p>
+<title>NSAN80</title>
 
-      <p class="hero-text">
-        Structured, deterministic testing solutions designed to reduce manual effort,
-        increase coverage, and maintain full control and traceability.
-      </p>
+<link rel="stylesheet" href="css/style.css">
+<style>
 
-      <div class="cta-row">
-        <a href="#solutions" class="cta-primary">Explore Solutions</a>
-        <a href="#services" class="cta-secondary">View Services</a>
-      </div>
-    </div>
+body {
+@@ -27,47 +25,47 @@
+}
 
-    <aside class="hero-aside">
-      <h2>Positioning</h2>
-      <p>
-        AI is a tool, not the system. The goal is controlled execution, clear
-        validation, and traceable results.
-      </p>
-    </aside>
-  </div>
-</section>
+.title {
+font-size:28px;
+font-size:30px;
+letter-spacing:1px;
+margin-bottom:18px;
+}
 
-<section id="solutions" class="section">
-  <div class="container">
-    <span class="eyebrow">Solutions</span>
-    <h2 class="section-title">Core Solution Areas</h2>
-    <p class="section-copy">
-      Focused capabilities for structured test generation, controlled execution,
-      deterministic validation, and evidence-based reporting.
-    </p>
+.subtitle {
+font-family:monospace;
+color:#7aa2d6;
+opacity:.85;
+margin-bottom:40px;
+}
 
-    <div class="section-grid">
-      <div class="feature-card">
-        <h3>Test Generation</h3>
-        <p>AI-assisted creation of structured test cases from requirements.</p>
-      </div>
+.loader {
+width:120px;
+height:2px;
+width:200px;
+height:4px;
+background:#1c2a3f;
+margin:auto;
+position:relative;
+overflow:hidden;
+border-radius:2px;
+}
 
-      <div class="feature-card">
-        <h3>Execution</h3>
-        <p>Automated execution using controlled, repeatable workflows.</p>
-      </div>
+.loader::after {
+content:"";
+position:absolute;
+left:-40%;
+width:40%;
+left:-50%;
+width:50%;
+height:100%;
+background:#3da9fc;
+animation:bootline 2.5s linear infinite;
+animation:bootline 2s linear infinite;
+}
 
-      <div class="feature-card">
-        <h3>Validation</h3>
-        <p>Deterministic validation with consistent and auditable results.</p>
-      </div>
+@keyframes bootline {
+0% { left:-40%; }
+0% { left:-50%; }
+100% { left:100%; }
+}
 
-      <div class="feature-card">
-        <h3>Reporting &amp; Integration</h3>
-        <p>Evidence-based reporting with screenshots and Jira integration.</p>
-      </div>
-    </div>
-  </div>
-</section>
+.status {
+margin-top:18px;
+margin-top:20px;
+font-family:monospace;
+color:#9fb3c8;
+font-size:13px;
+font-size:14px;
+}
 
-<section id="services" class="section">
-  <div class="container">
-    <span class="eyebrow">Services</span>
-    <h2 class="section-title">Deployment and Support</h2>
-    <p class="section-copy">
-      Practical services to help clients adopt structured QA workflows without
-      unnecessary complexity.
-    </p>
+</style>
+@@ -88,11 +86,29 @@
 
-    <div class="section-grid">
-      <div class="service-card">
-        <h3>Drop-in QA Platform Deployment</h3>
-        <p>Deploy a controlled testing environment aligned to client needs.</p>
-      </div>
+<div class="loader"></div>
 
-      <div class="service-card">
-        <h3>QA Automation Setup and Alignment</h3>
-        <p>Define execution behavior, validation rules, and workflow fit.</p>
-      </div>
+<div class="status">
+systems preparing • collaboration loading
+</div>
+<div class="status" id="statusLine"></div>
 
-      <div class="service-card">
-        <h3>Custom Configuration for Client Workflows</h3>
-        <p>Adapt reporting, execution paths, and integration points deliberately.</p>
-      </div>
+</div>
 
-      <div class="service-card">
-        <h3>Ongoing Support and Improvement</h3>
-        <p>Refine coverage, improve reliability, and reduce friction over time.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="how" class="section">
-  <div class="container">
-    <span class="eyebrow">How It Works</span>
-    <h2 class="section-title">Controlled End-to-End Flow</h2>
-    <p class="section-copy">
-      The process is designed for traceability, repeatability, and clear reporting.
-    </p>
-
-    <div class="process-list">
-      <div class="process-step">
-        <div class="process-step-number">1</div>
-        <h3>Import Requirements</h3>
-        <p>Bring in source requirements from Jira or documents.</p>
-      </div>
-
-      <div class="process-step">
-        <div class="process-step-number">2</div>
-        <h3>Generate Structured Test Cases</h3>
-        <p>Produce test cases in a controlled, repeatable format.</p>
-      </div>
-
-      <div class="process-step">
-        <div class="process-step-number">3</div>
-        <h3>Execute Automated Tests</h3>
-        <p>Run deterministic execution flows against the target system.</p>
-      </div>
-
-      <div class="process-step">
-        <div class="process-step-number">4</div>
-        <h3>Capture Results and Evidence</h3>
-        <p>Store outcomes, screenshots, and execution evidence.</p>
-      </div>
-
-      <div class="process-step">
-        <div class="process-step-number">5</div>
-        <h3>Sync Reporting and Integrations</h3>
-        <p>Push validated outcomes into reporting and connected systems.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="login" class="section">
-  <div class="container">
-    <div class="customer-access">
-      <span class="eyebrow">Customer Access</span>
-      <h2 class="section-title">Existing Customer Access</h2>
-      <p>
-        Existing customers can log in to access support and issue-related communication.
-        Customer access is secondary to the main site purpose.
-      </p>
-      <a href="dashboard.html" class="cta-secondary">Go to Login</a>
-    </div>
-  </div>
-</section>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div>© NSAN80 - Software Testing Solutions</div>
-    <div>Deterministic, traceable, controlled testing</div>
-  </div>
-</footer>
-
+<script>
+const messages = [
+"systems preparing • collaboration loading",
+"initializing curiosity engine",
+"verifying caffeine levels",
+"synchronizing human intuition",
+"ai ready • humans improvising",
+"checking if this idea is brilliant or ridiculous",
+"loading unreasonable optimism"
+];
+const line = messages[Math.floor(Math.random()*messages.length)];
+document.getElementById("statusLine").innerText = line;
+</script>
 </body>
 </html>
+0 commit comments
+Comments
+0
+ (0)
+Comment
