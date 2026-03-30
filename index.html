@@ -1,115 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NSAN80</title>
-
-<style>
-
-body {
-display:flex;
-align-items:center;
-justify-content:center;
-height:100vh;
-overflow:hidden;
-background:#0b1220;
-color:#d7dde7;
-font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
-margin:0;
-}
-
-.boot {
-text-align:center;
-max-width:600px;
-}
-
-.title {
-font-size:30px;
-letter-spacing:1px;
-margin-bottom:18px;
-}
-
-.subtitle {
-font-family:monospace;
-color:#7aa2d6;
-margin-bottom:40px;
-}
-
-.loader {
-width:200px;
-height:4px;
-background:#1c2a3f;
-margin:auto;
-position:relative;
-overflow:hidden;
-border-radius:2px;
-}
-
-.loader::after {
-content:"";
-position:absolute;
-left:-50%;
-width:50%;
-height:100%;
-background:#3da9fc;
-animation:bootline 2s linear infinite;
-}
-
-@keyframes bootline {
-0% { left:-50%; }
-100% { left:100%; }
-}
-
-.status {
-margin-top:20px;
-font-family:monospace;
-color:#9fb3c8;
-font-size:14px;
-}
-
-</style>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NSAN80 - Software Testing Solutions</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-
 <body>
 
-<div class="boot">
+<header>
+  <h1>NSAN80</h1>
+  <p>Software Testing Solutions</p>
+  <nav>
+    <a href="#solutions">Solutions</a>
+    <a href="#services">Services</a>
+    <a href="#how">How It Works</a>
+    <a href="dashboard.html">Login</a>
+  </nav>
+</header>
 
-<div class="title">
-Under Collaborative Inspiration
-</div>
+<section id="home">
+  <h2>AI-Assisted Software Testing Solutions</h2>
+  <p>Built from real SQA experience</p>
 
-<div class="subtitle">
-Human + AI environment initializing
-</div>
+  <p>
+    Structured, deterministic testing solutions designed to reduce manual effort,
+    increase coverage, and maintain full control and traceability.
+  </p>
 
-<div class="loader"></div>
+  <div>
+    <a href="#solutions">Explore Solutions</a>
+    <a href="#services">View Services</a>
+  </div>
+</section>
 
-<div class="status" id="statusLine"></div>
+<section id="solutions">
+  <h2>Solutions</h2>
 
-</div>
+  <div>
+    <h3>Test Generation</h3>
+    <p>AI-assisted creation of structured test cases from requirements.</p>
+  </div>
 
-<script>
+  <div>
+    <h3>Execution</h3>
+    <p>Automated execution using controlled, repeatable workflows.</p>
+  </div>
 
-const messages = [
+  <div>
+    <h3>Validation</h3>
+    <p>Deterministic validation with consistent and auditable results.</p>
+  </div>
 
-"systems preparing • collaboration loading",
-"initializing curiosity engine",
-"verifying caffeine levels",
-"synchronizing human intuition",
-"ai ready • humans improvising",
-"checking if this idea is brilliant or ridiculous",
-"loading unreasonable optimism"
+  <div>
+    <h3>Reporting & Integration</h3>
+    <p>Evidence-based reporting with screenshots and Jira integration.</p>
+  </div>
+</section>
 
-];
+<section id="services">
+  <h2>Services</h2>
 
-const line = messages[Math.floor(Math.random()*messages.length)];
+  <ul>
+    <li>Drop-in QA platform deployment</li>
+    <li>QA automation setup and alignment</li>
+    <li>Custom configuration for client workflows</li>
+    <li>Ongoing support and improvement</li>
+  </ul>
+</section>
 
-document.getElementById("statusLine").innerText = line;
+<section id="how">
+  <h2>How It Works</h2>
 
-</script>
+  <ol>
+    <li>Import requirements (Jira or documents)</li>
+    <li>Generate structured test cases</li>
+    <li>Execute automated tests</li>
+    <li>Capture results and evidence</li>
+    <li>Sync reporting and integrations</li>
+  </ol>
+</section>
+
+<section id="login">
+  <h2>Customer Access</h2>
+  <p>Existing customers can log in to access support and issue-related communication.</p>
+  <a href="dashboard.html">Go to Login</a>
+</section>
+
+<footer>
+  <p>© NSAN80 - Software Testing Solutions</p>
+</footer>
 
 </body>
 </html>
